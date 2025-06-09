@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Desafio da Palavra</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- <header>
+    <label class="switch">
+      <input type="checkbox" id="togglePerguntas" />
+      <span class="slider"></span>
+      Ocultar perguntas
+    </label>
+  </header> -->
+
+  <main class="container">
+
+    <div id="switchHeader">
+
+      <label class="switch">
+        <input type="checkbox" id="togglePerguntas" />
+        <span class="slider"></span>
+        Ocultar perguntas
+      </label>
+    </div>
+
+    <section class="section" id="cadastro-equipes">
+      <h2>Cadastrar Equipes</h2>
+      <input type="text" id="nomeEquipe" placeholder="Nome da equipe" />
+      <button onclick="adicionarEquipe()">Adicionar Equipe</button>
+      <ul id="listaEquipes"></ul>
+    </section>
+
+    <section class="section" id="cadastro-perguntas">
+      <h2>Cadastrar Temas e Perguntas</h2>
+
+      <!-- Cadastro de Tema -->
+      <label for="nomeTema">Nome do tema:</label><br />
+      <input type="text" id="nomeTema" placeholder="Nome do tema" />
+      <button onclick="adicionarTema()">Adicionar Tema</button>
+
+      <hr style="margin: 20px 0;" />
+
+      <!-- Cadastro de Pergunta associada -->
+      <label for="temaSelecionado">Selecione o tema:</label><br />
+      <select id="temaSelecionado"></select><br />
+
+      <label for="textoPergunta">Pergunta:</label><br />
+      <input type="text" id="textoPergunta" placeholder="Pergunta" />
+      <button onclick="adicionarPergunta()">Adicionar Pergunta</button>
+
+      <ul id="listaTemas"></ul>
+      <button id="resetPequeno" onclick="resetarTudo()">Resetar Tudo</button>
+    </section>
+
+    <div id="jogo" style="display: none;">
+      <div id="vezEquipe" class="info-top"></div>
+      <div id="temaSorteado" class="info-top"></div>
+      <div id="perguntaSorteada" class="pergunta-central"></div>
+
+      <div class="botoes-resposta">
+        <button onclick="responder(true)">Acertou</button>
+        <button onclick="responder(false)">Errou</button>
+      </div>
+    </div>
+
+    <div class="section" id="iniciar-jogo-section">
+      <button onclick="iniciarJogo()">Iniciar Jogo</button>
+    </div>
+
+    <div id="placar" class="placar-rodape"></div>
+    <button id="btnResetar" onclick="resetarTudo()" style="display: none;">Resetar Jogo</button>
+
+  </main>
+
+  <div id="countdown" style="display: none;"></div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
